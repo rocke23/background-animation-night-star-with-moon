@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Night Banner Animation Effects</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- https://mp4-b.udemycdn.com/2020-07-03_10-14-35-9acbd49065f5344f58cbb29ca8e619cb/1/WebHD_720p.mp4?secure=FamOY6W4WN-pcyatpDHXpg%3D%3D%2C1650104312 
+    video practice -->
+</head>
+<body>
+    <div class="scene">
+        <div class="moon"></div>
+        <img src="Forest-PNG-Image.png" class="forest">
+    </div>
+    <script>
+        function stars(){
+            let count = 500;
+            let i = 0;
+            while(i < count){
+                let scene = document.querySelector('.scene')
+                let star = document.createElement('i');
+                let x = Math.floor(Math.random()* window.innerWidth);
+                let y = Math.floor(Math.random()* window.innerHeight);
+                let size = Math.random() * 2;
+
+                let duration = Math.random() * 10;
+
+                star.style.left = x+ 'px';
+                star.style.top = y+ 'px';
+                star.style.width = size+ 'px';
+                star.style.height = size+ 'px';
+
+                star.style.animationDuration = 5 + duration+'s';
+                star.style.animationDelay = duration+'s';
+
+                scene.appendChild(star);
+                i++
+            }
+        }
+
+        stars();
+    </script>
+</body>
+</html>
